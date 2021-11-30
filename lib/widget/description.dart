@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-class TextMore extends StatefulWidget {
+class Description extends StatefulWidget {
   final String text;
   final String userName;
 
-  const TextMore({
+  const Description({
     Key? key,
     required this.text,
     required this.userName,
   }) : super(key: key);
 
   @override
-  _TextMoreState createState() => _TextMoreState();
+  DescriptionState createState() => DescriptionState();
 }
 
-class _TextMoreState extends State<TextMore> {
+class DescriptionState extends State<Description> {
   String firstHalf = '';
   String secondHalf = '';
 
-  bool flag = true;
+  bool isExpanded = true;
 
   @override
   void initState() {
@@ -38,12 +38,12 @@ class _TextMoreState extends State<TextMore> {
     return Container(
       child: secondHalf.isEmpty
           ? Text(firstHalf)
-          : !flag
+          : !isExpanded
               ? Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      flag ? (firstHalf + "... ") : (firstHalf + secondHalf),
+                      isExpanded ? (firstHalf + "... ") : (firstHalf + secondHalf),
                     ),
                     InkWell(
                       child: Column(
@@ -51,7 +51,7 @@ class _TextMoreState extends State<TextMore> {
                       ),
                       onTap: () {
                         setState(() {
-                          flag = !flag;
+                          isExpanded = !isExpanded;
                         });
                       },
                     ),
@@ -67,14 +67,14 @@ class _TextMoreState extends State<TextMore> {
                       ),
                     ),
                     Text(
-                      flag ? (' $firstHalf ... ') : (firstHalf + secondHalf),
+                      isExpanded ? (' $firstHalf ... ') : (firstHalf + secondHalf),
                     ),
                     InkWell(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Text(
-                            flag ? "ещё" : "",
+                            isExpanded ? "ещё" : "",
                             style: const TextStyle(
                               color: Colors.black,
                             ),
@@ -83,7 +83,7 @@ class _TextMoreState extends State<TextMore> {
                       ),
                       onTap: () {
                         setState(() {
-                          flag = !flag;
+                          isExpanded = !isExpanded;
                         });
                       },
                     ),

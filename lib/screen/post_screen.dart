@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_project/model/post/post.dart';
+import 'package:test_project/widget/description.dart';
 
 import '../widget/add_comments.dart';
 import '../widget/all_comments.dart';
@@ -7,7 +8,6 @@ import '../widget/header_post.dart';
 import '../widget/icon_under_image.dart';
 import '../widget/likes.dart';
 import '../widget/post_time.dart';
-import '../widget/text_more.dart';
 
 class PostScreen extends StatelessWidget {
   final Post post;
@@ -59,7 +59,7 @@ class PostScreen extends StatelessWidget {
                 const SizedBox(height: 5),
                 const Likes(),
                 const SizedBox(height: 5),
-                TextMore(
+                Description(
                   text: '${post.title} ${post.body}',
                   userName: username,
                 ),

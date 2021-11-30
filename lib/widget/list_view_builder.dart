@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ListViewBuilder extends StatelessWidget {
   final List listData;
   final listTileFun;
+
   const ListViewBuilder({
     Key? key,
     required this.listData,
