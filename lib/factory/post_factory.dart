@@ -4,7 +4,7 @@ import '/repo/post_repo.dart';
 class PostFactory {
   PostRepo postRepo = PostRepo();
 
-  Future<List<Post>> getPost(int id) async {
-    return postRepo.getPost(id);
+  Future<List<Post>> getPosts(int userId) async {
+    return postRepo.getPosts(userId);
   }
 }

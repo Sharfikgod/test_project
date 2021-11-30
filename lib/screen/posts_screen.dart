@@ -35,7 +35,7 @@ class _PostsScreenState extends State<PostsScreen> {
       isLoading = true;
     });
     try {
-      listPost = await postFactory.getPost(id);
+      listPost = await postFactory.getPosts(id);
     } catch (e) {
       showDialog(
           context: context,
