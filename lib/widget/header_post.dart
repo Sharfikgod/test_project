@@ -46,10 +46,7 @@ class HeaderPost extends StatelessWidget {
             ],
           ),
           TextButton(
-            child: Image.asset(
-              'assets/menu.png',
-              width: 20,
-            ),
+            child: const Icon(Icons.more_vert),
             onPressed: () {},
           ),
         ],
