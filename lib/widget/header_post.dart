@@ -46,7 +46,10 @@ class HeaderPost extends StatelessWidget {
             ],
           ),
           TextButton(
-            child: const Icon(Icons.more_vert),
+            child: const Icon(
+              Icons.more_vert,
+              color: Colors.black,
+            ),
             onPressed: () {},
           ),
         ],

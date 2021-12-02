@@ -63,7 +63,6 @@ class PostScreen extends StatelessWidget {
                   text: '${post.title} ${post.body}',
                   userName: username,
                 ),
-                const SizedBox(height: 5),
                 const AllComments(),
                 AddComment(urlProfile: post.imageUrlProfile),
                 const PostTime(),
