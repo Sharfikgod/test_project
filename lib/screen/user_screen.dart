@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/widget/list_view_builder.dart';
 
-import '/model/user/user.dart';
+import '/model/user.dart';
 import '/factory/user_factory.dart';
 import '../helper/something_wrong_exception.dart';
 import 'posts_screen.dart';
@@ -61,9 +60,10 @@ class _UserScreenState extends State<UserScreen> {
             ),
             Expanded(
               child: !isLoading
-                  ? ListViewBuilder(
-                      listData: listUser,
-                      listTileFun: (context, i) {
+                  ? ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: listUser.length,
+                      itemBuilder: (context, i) {
                         return ListTile(
                             title: Text(listUser[i].name),
                             subtitle: Text(listUser[i].address.city),
@@ -76,7 +76,8 @@ class _UserScreenState extends State<UserScreen> {
                                 ),
                               );
                             });
-                      })
+                      },
+                    )
                   : const Center(
                       child: CircularProgressIndicator(),
                     ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/model/post/post.dart';
+import 'package:test_project/model/post.dart';
 import 'package:test_project/widget/description.dart';
 
 import '../widget/add_comments.dart';
@@ -56,9 +56,9 @@ class PostScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const IconUnderImage(),
-                const SizedBox(height: 5),
+                const VerticalDivider(),
                 const Likes(),
-                const SizedBox(height: 5),
+                const VerticalDivider(),
                 Description(
                   text: '${post.title} ${post.body}',
                   userName: username,

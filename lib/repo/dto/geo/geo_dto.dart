@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'geo.dart';
+import '../../../model/geo.dart';
 
 part 'geo_dto.g.dart';
 

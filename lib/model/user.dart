@@ -1,4 +1,4 @@
-import '../address/address.dart';
+import 'address.dart';
 
 class User {
   final int id;

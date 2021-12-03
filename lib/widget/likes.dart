@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 class Likes extends StatelessWidget {
@@ -5,17 +7,19 @@ class Likes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var numberOfLikes = math.Random().nextInt(100);
+
     return Row(
-      children: const [
-        Text(
+      children: [
+        const Text(
           'Нравится: ',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),
         Text(
-          '30',
-          style: TextStyle(
+          numberOfLikes.toString(),
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
           ),
         ),

@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import '../address/address_dto.dart';
 
-import 'user.dart';
+import '../../../model/user.dart';
 
 part 'user_dto.g.dart';
 

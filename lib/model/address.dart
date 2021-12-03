@@ -1,4 +1,4 @@
-import '../geo/geo.dart';
+import 'geo.dart';
 
 class Address {
   final String street;

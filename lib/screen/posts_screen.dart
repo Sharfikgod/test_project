@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '/helper/something_wrong_exception.dart';
-import '/model/post/post.dart';
-import '/model/user/user.dart';
+import '/model/post.dart';
+import '/model/user.dart';
 import '/screen/post_screen.dart';
-import '/widget/list_view_builder.dart';
 import '../factory/post_factory.dart';
 
 class PostsScreen extends StatefulWidget {
@@ -63,34 +62,33 @@ class _PostsScreenState extends State<PostsScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: SingleChildScrollView(
-          child: !isLoading
-              ? ListViewBuilder(
-                  listData: listPost,
-                  listTileFun: (context, i) {
-                    return ListTile(
-                      leading: Image.network(listPost[i].imageUrlPost),
-                      title: Padding(
-                        padding: const EdgeInsets.all(8),
-                        child: Text(
-                          listPost[i].title,
+        child: !isLoading
+            ? ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: listPost.length,
+                itemBuilder: (context, i) {
+                  return ListTile(
+                    leading: Image.network(listPost[i].imageUrlPost),
+                    title: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Text(
+                        listPost[i].title,
+                      ),
+                    ),
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) => PostScreen(
+                          post: listPost[i],
+                          username: widget.user.username,
                         ),
                       ),
-                      onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (ctx) => PostScreen(
-                            post: listPost[i],
-                            username: widget.user.username,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                )
-              : const Center(
-                  child: CircularProgressIndicator(),
-                ),
-        ),
+                    ),
+                  );
+                },
+              )
+            : const Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
     );
   }

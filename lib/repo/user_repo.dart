@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
 import '/helper/something_wrong_exception.dart';
-import '/model/user/user.dart';
-import '/model/user/user_dto.dart';
+import '/model/user.dart';
+import '/repo/dto/user/user_dto.dart';
 
 class UserRepo {
+  var dio = Dio();
+
   Future<List<User>> getUsers() async {
-    var dio = Dio();
     try {
       var response = await dio.get("http://jsonplaceholder.typicode.com/users");
 

@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../geo/geo_dto.dart';
-import 'address.dart';
+import '../../../model/address.dart';
 
 part 'address_dto.g.dart';
 

@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:test_project/model/post/post.dart';
+import 'package:test_project/model/post.dart';
 
 part 'post_dto.g.dart';
 

@@ -1,4 +1,4 @@
-import '/model/post/post.dart';
+import '/model/post.dart';
 import '/repo/post_repo.dart';
 
 class PostFactory {

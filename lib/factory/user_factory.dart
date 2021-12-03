@@ -1,4 +1,4 @@
-import '/model/user/user.dart';
+import '/model/user.dart';
 import '/repo/user_repo.dart';
 
 class UserFactory {
