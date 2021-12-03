@@ -160,7 +160,7 @@ class ExpandableTextState extends State<ExpandableText> {
         var textSpan;
         if (textPainter.didExceedMaxLines) {
           textSpan = TextSpan(
-            text: _readMore ? widget.text.substring(0, endIndex) : widget.text,
+            text: _readMore ? '${widget.text.substring(0, endIndex - 1)}...' : widget.text,
             style: TextStyle(
               color: widgetColor,
             ),
