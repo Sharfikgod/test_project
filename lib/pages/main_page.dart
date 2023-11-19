@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/extensions/nav_context_ext.dart';
+import 'package:test_project/pages/contact_us/contact_us_page.dart';
 
 class MainPage extends StatelessWidget {
   static const routeName = '/mainPage';
@@ -6,9 +8,12 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text(routeName),
+        child: TextButton(
+          onPressed: () => context.pushNamed(ContactUsPage.routeName),
+          child: const Text('Contact us'),
+        ),
       ),
     );
   }
